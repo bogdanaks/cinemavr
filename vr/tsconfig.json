@@ -16,7 +16,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "types": [
-      "babylonjs"
+      "babylonjs",
     ],
   },
   "include": ["./src/**/*", "./src/**/*.json"],

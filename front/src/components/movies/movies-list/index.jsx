@@ -7,13 +7,13 @@ const MoviesList = () => {
   return (
     <ul className={styles.list}>
       <li>
-        <MoviesItem />
+        <MoviesItem id={1} imageSrc='/assets/images/movie1.webp' />
       </li>
       <li>
-        <MoviesItem />
+        <MoviesItem id={2} imageSrc='/assets/images/movie2.webp' />
       </li>
       <li>
-        <MoviesItem />
+        <MoviesItem id={3} imageSrc='/assets/images/movie3.webp' />
       </li>
     </ul>
   )
