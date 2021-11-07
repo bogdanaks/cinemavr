@@ -27,6 +27,22 @@ export default class SceneApp {
     screenPlane.position.y = 1
     screenPlane.position.z = 10
 
+    const videoEl = document.getElementById('videoEl')
+    let mat = new BABYLON.StandardMaterial('mat', scene)
+    mat.diffuseColor = BABYLON.Color3.White()
+    videoEl.setAttribute('src', 'http://localhost:3000/video')
+    videoEl.setAttribute('autoplay', 'false')
+    videoEl.setAttribute('muted', 'true')
+
+    let videoMat = new BABYLON.StandardMaterial('textVid', scene)
+    // @ts-ignore
+    const videoTexture = new BABYLON.VideoTexture('video', videoEl, scene, true, true)
+    videoMat.backFaceCulling = false
+    videoMat.diffuseTexture = videoTexture
+    videoMat.emissiveColor = BABYLON.Color3.White()
+    screenPlane.material = videoMat
+    videoTexture._invertY = false
+
     const env = scene.createDefaultEnvironment()
 
     await scene.createDefaultXRExperienceAsync({
